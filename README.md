@@ -34,3 +34,8 @@ These resources are accessible via Groovy's resource loading.
 4. Set SCM to **Git -> Add enpoint and credentials of Jenkins Shared Repo to that**  
 ## User Jenkins share Library 
 1. **In Jenkinsfile** : @Library('name-of-jenkins-share-lib')
+## Extract Groovy script by using class 
+1. In /src create a package 
+2. Define a class 
+3. Implement Serilizable to support saving a state of the execution if the pipeline is paused and resumed : `class Docker implements Serializable `
+4. We don't have syntax in the source package . So we will pass the parameter from these method : ` def script Docker(script){}` script will hold all the pipelines ENV 
