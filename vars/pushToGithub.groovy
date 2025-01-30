@@ -1,4 +1,4 @@
-def call (String gitUrl, branch){
+def call (String gitUrl, String branch){
   withCredentials([usernamePassword(credentialsId: 'github-credentials', usernameVariable: 'USER', passwordVariable: 'PWD')]){
     sh "git remote set-url origin https://${USER}:${PWD}@${gitUrl}"
 
